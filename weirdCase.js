@@ -22,6 +22,7 @@ function toWeirdCase(string) {
     return res.join("");
   }
 }
+740012;
 
 const result = toWeirdCase("stri");
 console.log(result);

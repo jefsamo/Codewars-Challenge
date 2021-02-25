@@ -1,49 +1,50 @@
-function mixedFraction(s) {
-  //your code here
-  let nume, denom;
-  s = s.split("/");
-  nume = s[0];
-  denom = s[1];
-  if (denom === 0) {
-    throw new Error("ZeroDivisionError");
-  }
-  let wholeNumber, topFraction, bottomFraction;
-  if (nume % denom !== 0) {
-    wholeNumber = Math.floor(nume / denom);
-    topFraction = nume % denom;
-    bottomFraction = parseInt(denom);
-    if (topFraction % 2 === 0 && bottomFraction % 2 === 0) {
-      topFraction /= 2;
-      bottomFraction /= 2;
-    } else if (topFraction % 3 === 0 && bottomFraction % 3 === 0) {
-      topFraction /= 3;
-      bottomFraction /= 3;
-    }
-    // console.log(wholeNumber, topFraction, bottomFraction);
-    return `${
-      wholeNumber === 0 ? "" : wholeNumber
-    } ${topFraction}/${bottomFraction}`.trim();
-  } else if (nume < denom) {
-    if (topFraction % 2 === 0 && bottomFraction % 2 === 0) {
-      topFraction /= 2;
-      bottomFraction /= 2;
-      return `${topFraction}/${bottomFraction}`;
-    } else if (topFraction % 3 === 0 && bottomFraction % 3 === 0) {
-      topFraction /= 3;
-      bottomFraction /= 3;
-      return `${topFraction}/${bottomFraction}`;
-    }
-  } else if (nume === 0) {
-    return 0;
-  }
-  return (nume / denom).toString();
-}
+// function mixedFraction(s) {
+//   //your code here
+//   let nume, denom;
+//   s = s.split("/");
+//   nume = s[0];
+//   denom = s[1];
+//   if (denom === 0) {
+//     throw new Error("ZeroDivisionError");
+//   }
+//   let wholeNumber, topFraction, bottomFraction;
+//   if (nume % denom !== 0) {
+//     wholeNumber = Math.floor(nume / denom);
+//     topFraction = nume % denom;
+//     bottomFraction = parseInt(denom);
+//     if (topFraction % 2 === 0 && bottomFraction % 2 === 0) {
+//       topFraction /= 2;
+//       bottomFraction /= 2;
+//     } else if (topFraction % 3 === 0 && bottomFraction % 3 === 0) {
+//       topFraction /= 3;
+//       bottomFraction /= 3;
+//     }
+//     // console.log(wholeNumber, topFraction, bottomFraction);
+//     return `${
+//       wholeNumber === 0 ? "" : wholeNumber
+//     } ${topFraction}/${bottomFraction}`.trim();
+//   } else if (nume < denom) {
+//     if (topFraction % 2 === 0 && bottomFraction % 2 === 0) {
+//       topFraction /= 2;
+//       bottomFraction /= 2;
+//       return `${topFraction}/${bottomFraction}`;
+//     } else if (topFraction % 3 === 0 && bottomFraction % 3 === 0) {
+//       topFraction /= 3;
+//       bottomFraction /= 3;
+//       return `${topFraction}/${bottomFraction}`;
+//     }
+//   } else if (nume === 0) {
+//     return 0;
+//   }
+//   return (nume / denom).toString();
+// }
 
-const res = mixedFraction("3/0");
-console.log(res);
+// const res = mixedFraction("3/0");
+// console.log(res);
 
+//
 /**
- 
+
  function mixedFraction(s) {
   //your code here
   let nume, denom;
@@ -83,10 +84,6 @@ console.log(res);
 const res = mixedFraction("6/9");
 console.log(res);
 
- 
- 
-
- 
  */
 
 function mixedFraction(s) {
@@ -145,3 +142,9 @@ function mixedFraction(s) {
 function greatestCommonFactor(a, b) {
   return b === 0 ? a : greatestCommonFactor(b, a % b);
 }
+const reg = /-/g;
+console.log(reg.test("waleshow"));
+
+console.log(mixedFraction("4/3"));
+console.log(greatestCommonFactor(24, 16));
+console.log(7 % 10);
