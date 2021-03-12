@@ -7,12 +7,15 @@ function tickets(peopleInLine) {
   const setTicket = (bill) => {
     if (bill === 25) {
       cash[25]++;
+      console.log(cash);
       return true;
     }
 
     if (bill === 50 && cash[25] > 0) {
       cash[25]--;
       cash[50]++;
+      console.log(cash);
+
       return true;
     }
 
@@ -20,11 +23,15 @@ function tickets(peopleInLine) {
       if (cash[50] > 0 && cash[25] > 0) {
         cash[50]--;
         cash[25]--;
+        console.log(cash);
+
         return true;
       }
 
       if (cash[25] > 2) {
         cash[25] -= 3;
+        console.log(cash);
+
         return true;
       }
     }
@@ -62,5 +69,5 @@ function tickets(peopleInLine) {
 //   return "YES";
 // }
 
-const res = tickets([25, 25, 50, 100]);
+const res = tickets([25, 25, 50, 100, 100, 25, 50, 100]);
 console.log(res);

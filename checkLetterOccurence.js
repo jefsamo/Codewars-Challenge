@@ -6,7 +6,7 @@ const checkWordOccurrence = (str, isCaseSensitive = false) => {
     throw new TypeError("The second param should be a boolean");
   }
 
-  const result = [];
+  const result = {};
   if (str.length > 0) {
     for (let i = 0; i < str.length; i++) {
       const word = isCaseSensitive ? str[i] : str[i].toUpperCase();
@@ -18,5 +18,5 @@ const checkWordOccurrence = (str, isCaseSensitive = false) => {
   return result;
 };
 
-const res = checkWordOccurrence("Wale wale", true);
+const res = checkWordOccurrence("Wale waLle");
 console.log(res);

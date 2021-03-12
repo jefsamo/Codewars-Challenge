@@ -17,6 +17,6 @@ function toUnderscore(string) {
 }
 
 // Wale_Sho
-const res = toUnderscore("App7Test");
+const res = toUnderscore("AppTestW");
 console.log(res);
 console.log("My7String".split(/(?=[A-Z])/));

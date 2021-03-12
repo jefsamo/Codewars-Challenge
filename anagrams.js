@@ -20,18 +20,19 @@ const checkAnagram = (str1, str2) => {
     }
     str1CharCount.set(str1[i], previousCount + 1);
   }
-  console.log(str1CharCount);
 
   // Now check if second string has same characters?
 
   for (let i = 0; i < str2.length; i++) {
     let previousCount = 0;
     // if str1CharCount has no key for str2[i] then not anagram.
+    // console.log(str1CharCount);
     if (!str1CharCount.has(str2[i])) {
       return "Not anagrams";
     }
     previousCount = str1CharCount.get(str2[i]);
     str1CharCount.set(str2[i], previousCount - 1);
+    console.log(str1CharCount);
   }
 
   // Now check if all entries in hashmap has zeros.
@@ -45,6 +46,6 @@ const checkAnagram = (str1, str2) => {
   return "Anagrams";
 };
 
-console.log(checkAnagram("kiteSs", "skites"));
+console.log(checkAnagram("Charh", "hraCh"));
 
-console.log([1, 2, 3].includes([1, 2, 3]));
+// console.log([1, 2, 3].includes([1, 2, 3]));
